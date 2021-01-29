@@ -41,3 +41,35 @@ def il_existe(liste):
         if i:
             return True
     return False
+
+#Question 0
+COURTE_LISTE = L_ETUDIANTS[:10]
+
+#Question 1
+def est_liste_d_etudiants(x):
+    """
+    Paramètres: liste un objet quelconque
+    Valeur de retour: un booléen (True|False)
+    Comportement: Renvoie True si x est une liste
+    de dictionnaires avec les clés définies.
+    >>> est_liste_d_etudiants(COURTE_LISTE)
+    True
+    >>> est_liste_d_etudiants("Timoleon") 
+    False
+    >>> est_liste_d_etudiants([('12345678', 'Calbuth', 'Raymond', 'Danse', '12') ])
+    False
+    >>> est_liste_d_etudiants([{'nip': 'test_nip', 'nom': 'test_nom', 'prenom': '...', 'formation': '...', 'groupe': '...'}])
+    True
+    """
+    #Dans le cas ou x n'est pas une liste
+    if not(isinstance(x, list)):
+        return False
+    keys = ['nip', 'nom', 'prenom', 'formation', 'groupe']
+    for etudiant in x:
+        #Dans le cas etudiant n'est pas un dictionnaire
+        if not(isinstance(etudiant, dict)):
+            return False
+        for key in keys:
+            if not(key in etudiant):
+                return False
+    return True
