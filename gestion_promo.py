@@ -6,10 +6,12 @@ from etudiants import L_ETUDIANTS
 
 def pour_tous(liste):
     """
-    Paramètres: liste une liste de booléens
-    Valeur de retour: un booléen (True|False)
-    Comportement: Renvoie False si la liste
+    :param liste: (list) une liste de booléens
+    :return: (bool) un booléen (True|False)
+    :Side-Effect: Renvoie False si la liste
     contient un élément False, True sinon.
+    :CU: Aucune
+    :Exemples:
     >>> pour_tous([])
     True
     >>> pour_tous((True, True, True))
@@ -26,10 +28,12 @@ def pour_tous(liste):
 
 def il_existe(liste):
     """
-    Paramètres: liste une liste de booléens
-    Valeur de retour: un booléen (True|False)
-    Comportement: Renvoie True si la liste
+    :param liste: (list) liste une liste de booléens
+    :return: (bool) un booléen (True|False)
+    :Side-Effect: Renvoie True si la liste
     contient un élément True, False sinon.
+    :CU: Aucune
+    :Exemples:
     >>> il_existe([])
     False
     >>> il_existe((False, True, False))
@@ -50,10 +54,12 @@ COURTE_LISTE = L_ETUDIANTS[:10]
 # --- --- --- Question 1
 def est_liste_d_etudiants(x):
     """
-    Paramètres: x un objet quelconque
-    Valeur de retour: un booléen (True|False)
-    Comportement: Renvoie True si x est une liste
+    :param x: (object) x un objet quelconque
+    :return: (bool) un booléen (True|False)
+    :Side-Effect: Renvoie True si x est une liste
     de dictionnaires avec les clés définies.
+    :CU: Aucune
+    :Exemples:
     >>> est_liste_d_etudiants(COURTE_LISTE)
     True
     >>> est_liste_d_etudiants("Timoleon") 
@@ -102,13 +108,14 @@ FICHE_ASSO = L_ETUDIANTS[NIP % NBRES_FICHES]
 
 def liste_des_formations(liste):
     """
-    Paramètres: liste une liste d'étudiants
-    Valeur de retour: une liste de chaînes de
+    :param liste: (list) liste une liste d'étudiants
+    :return: (list) une liste de chaînes de
     caractères donnant les formations dans les
     fiches d'étudiants
-    Comportement: Renvoie une liste qui contient
+    :Side-Effect: Renvoie une liste qui contient
     les formations de la liste en paramètre.
-    CU: est_liste_d_etudiants(liste) == True
+    :CU: est_liste_d_etudiants(liste) == True
+    :Exemples:
     >>> sorted(liste_des_formations(COURTE_LISTE[:4])) == sorted(['SESI', 'PEIP', 'SESI', 'MASS'])
     True
     >>> sorted(liste_des_formations(COURTE_LISTE[0:2])) == sorted(['PEIP', 'SESI'])
@@ -137,13 +144,14 @@ def liste_des_formations(liste):
 
 def occurrences_prenoms(liste):
     """
-    Paramètres: liste une liste d'étudiants
-    Valeur de retour: un dictionnaire avec une
-    clé chaîne de caractère et une valeur entière
-    Comportement:  Renvoie un dictionnaire qui
+    :param liste: (list) liste une liste d'étudiants
+    :return: (dict)  un dictionnaire avec une
+    clé chaîne de caractère (str) et une valeur entière (int)
+    :Side-Effect: Renvoie un dictionnaire qui
     associe à chaque prénom le nombre d'étudiants
     qui possèdent ce prénom.
-    CU: est_liste_d_etudiants(liste) == True
+    :CU: est_liste_d_etudiants(liste) == True
+    :Exemples:
     >>> occurrences_prenoms(COURTE_LISTE[:5])['Anne'] == 1
     True
     >>> occurrences_prenoms(COURTE_LISTE)['David'] == 2
@@ -222,13 +230,14 @@ for cle in app:
 
 def occurrences_nip(liste):
     """
-    Paramètres: liste une liste d'étudiants
-    Valeur de retour: un dictionnaire avec une
+    :param liste: (list) liste une liste d'étudiants
+    :return: (dict) un dictionnaire avec une
     clé chaîne de caractère et une valeur entière
-    Comportement:  Renvoie un dictionnaire qui
+    :Side-Effect: Renvoie un dictionnaire qui
     associe à chaque nip le nombre d'occurences
     de ce code nip dans la liste.
-    CU: est_liste_d_etudiants(liste) == True
+    :CU: est_liste_d_etudiants(liste) == True
+    :Exemples:
     >>> occurrences_nip(COURTE_LISTE[:5])['49284201'] == 1
     True
     >>> occurrences_nip(COURTE_LISTE)['48686474'] == 2
@@ -301,12 +310,13 @@ etudiants_en_sesi = dans_la_formation['SESI']
 
 def liste_formation(liste, form):
     """
-    Paramètres: liste – (list) une liste de fiches d’étudiants
+    :params liste, form: liste – (list) une liste de fiches d’étudiants
                 form – (str) une formation
-    Valeur de retour: une liste de quatre paramètres
-    Comportement: (list) la liste des étudiants de la formation
-    form sous forme d’un quadruplet (nip, nom, prenom, groupe)
-    Exemples:
+    :return: (list) une liste de quatre paramètres
+    :Side-Effect: (list) la liste des étudiants de la formation
+    form sous forme d’un quadruplet (nip, nom, prenom, groupe
+    :CU: Aucune
+    :Exemples:
     >>> l_SESI = liste_formation(COURTE_LISTE, 'SESI')
     >>> len(l_SESI)
     6
