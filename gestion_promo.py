@@ -29,8 +29,7 @@ def pour_tous(liste):
 def il_existe(liste):
     """
     :param liste: (list) liste une liste de booléens
-    :return: (bool) un booléen (True|False)
-    :Side-Effect: Renvoie True si la liste
+    :return: (bool) True si la liste
     contient un élément True, False sinon.
     :CU: Aucune
     :Exemples:
