@@ -21,10 +21,16 @@ def pour_tous(liste):
     """
     if len(liste) == 0:
         return True
-    for i in liste:
-        if not(i):
-            return False
-    return True
+    #Drapeau pour savoir si un élément False est trouvé
+    flag = True
+    i = 0
+    
+    #Remplacement du for + return par un while
+    while (i < len(liste) and flag):
+        if not liste[i]:
+            flag = False
+        i += 1
+    return flag
 
 def il_existe(liste):
     """
@@ -42,10 +48,16 @@ def il_existe(liste):
     """
     if len(liste) == 0:
         return False
-    for i in liste:
-        if i:
-            return True
-    return False
+    #Drapeau pour savoir si un élément True est trouvé
+    flag = False
+    i = 0
+    
+    #Remplacement du for + return par un while
+    while (i < len(liste) and not flag):
+        if liste[i]:
+            flag = True
+        i += 1
+    return flag
 
 # --- --- --- Question 0
 COURTE_LISTE = L_ETUDIANTS[:10]
@@ -106,6 +118,7 @@ FICHE_ASSO = L_ETUDIANTS[NIP % NBRES_FICHES]
 # --- --- --- Question 4
 
 def liste_des_formations(liste):
+    #Ce que doit faire la fonction n'est pas clair
     """
     :param liste: (list) liste une liste d'étudiants
     :return: (list) une liste de chaînes de
